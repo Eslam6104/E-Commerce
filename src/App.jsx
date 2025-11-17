@@ -2,15 +2,16 @@
 // // import Hero from "./components/hero";
 // import Search from "./components/Search"
 // import Mission2 from "./components/mission2"
-import Categories from "./components/categories";
+import Sales from "./components/sales";
 
 function App() {
   return (
     <>
-      <Categories />
+      <Sales />
     </>
   );
 }
 
 export default App;
+
 

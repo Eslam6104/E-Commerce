@@ -1,4 +1,3 @@
-// src/data/categories.js
 import jacketsImg from "../assets/images/jacket.webp";
 import sweatersImg from "../assets/images/sweaters.webp";
 import accessoriesImg from "../assets/images/accessories.webp";
