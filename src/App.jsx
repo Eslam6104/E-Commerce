@@ -1,12 +1,13 @@
 import { useState } from 'react'
+import Hero from "./components/hero";
 
 function App() {
  
 
   return (
-    <>
-  <div className='h1'>sjfhf</div>    </>
+    <Hero/>
+  
   )
 }
 
-export default App
+export default App;

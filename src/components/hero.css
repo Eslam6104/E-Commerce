@@ -1,0 +1,52 @@
+.hero-section {
+  min-height: 90vh;
+  background-color: #dcdde1;
+  display: flex;
+  align-items: center;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.hero-subtitle {
+  max-width: 480px;
+  color: #555;
+}
+
+.hero-bullets span {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.hero-btn {
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.hero-img {
+  
+  height: 1000px;
+  width:1000px;
+  max-height: 90vh;
+}
+.hero-strip {
+  background-color: #151418;
+}
+
+
+@media (max-width: 767.98px) {
+  .hero-title {
+    font-size: 2.4rem;
+  }
+
+  .hero-section {
+    text-align: center;
+  }
+
+  .hero-subtitle {
+    margin: 0 auto 1.5rem;
+  }
+}
