@@ -1,9 +1,15 @@
-import { Link } from "react-router-dom";
+import { useRef } from "react";
 import "./mission2.css";
 import missionImg from "../assets/images/mission2.webp";
+import { setupAccordion } from "./accordionController";
+
 const Mission = () => {
   const description =
     "Description for this block. Use this space for describing your block. Any text will do. Description for this block. You can use this space for describing your block.";
+
+  const detailsRef = useRef([]);
+
+  const handleToggle = setupAccordion(detailsRef);
 
   return (
     <section className="mission-section">
@@ -24,9 +30,12 @@ const Mission = () => {
             elementum. Etiam elementum euismod commodo.
           </p>
 
-          {/* details and summary*/}
           <div className="mission-accordion">
-            <details className="mission-item">
+            <details
+              className="mission-item"
+              ref={(element) => (detailsRef.current[0] = element)}
+              onToggle={() => handleToggle(0)}
+            >
               <summary>
                 Pellentesque tincidunt tristique neque?
                 <span className="mission-toggle" />
@@ -34,7 +43,11 @@ const Mission = () => {
               <p className="mission-desc">{description}</p>
             </details>
 
-            <details className="mission-item">
+            <details
+              className="mission-item"
+              ref={(element) => (detailsRef.current[1] = element)}
+              onToggle={() => handleToggle(1)}
+            >
               <summary>
                 Suspendisse sed ultricies nisl, pharetra rutrum mauris?
                 <span className="mission-toggle" />
@@ -42,26 +55,27 @@ const Mission = () => {
               <p className="mission-desc">{description}</p>
             </details>
 
-            <details className="mission-item">
+            <details
+              className="mission-item"
+              ref={(element) => (detailsRef.current[2] = element)}
+              onToggle={() => handleToggle(2)}
+            >
               <summary>
-                Fusce at egestas libero convallis egestasullamcorper?
+                Fusce at egestas libero convallis egestas ullamcorper?
                 <span className="mission-toggle" />
               </summary>
               <p className="mission-desc">{description}</p>
             </details>
           </div>
-          <Link to="/news" className="mission-btn">
-            MORE DETAILS
-          </Link>
+
+          <button className="mission-btn">MORE DETAILS</button>
         </div>
-        {/* Image */}
-        <div className="mission-image-container">
-          <img
-            src={missionImg}
-            alt="Clothes on hangers"
-            className="mission-image"
-          />
-        </div>
+
+        <img
+          src={missionImg}
+          alt="Clothes on hangers"
+          className="mission-image"
+        />
       </div>
     </section>
   );

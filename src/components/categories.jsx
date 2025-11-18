@@ -1,4 +1,3 @@
-// src/components/Categories.jsx
 import "./categories.css";
 import categories from "../assets/categories";
 

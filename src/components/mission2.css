@@ -110,12 +110,6 @@
   border: 1px solid #e53935;;
 }
 
-/* Image */
-.mission-image-container {
-  display: flex;
-  justify-content: center;
-  
-}
 
 .mission-image {
   width:100%;

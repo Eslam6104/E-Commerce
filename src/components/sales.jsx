@@ -49,7 +49,7 @@ const Sales = () => {
             Odio tempor orci dapibus ultricies in. Egestas diam in arcu cursus
             euismod dictum purus viverra accumsan.
           </p>
-          <Link to="/products" className="allDeals-btn">
+          <Link  to="/products" className="allDeals-btn">
             ALL DEALS
           </Link>
 
