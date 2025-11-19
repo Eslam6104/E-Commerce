@@ -1,15 +1,56 @@
-import { useState } from 'react'
-import GarderobeNavba from './Components/Nav'
-import Footer from './Components/footer/Footer.jsx'
-function App() {
- 
+import Nav from "./Components/Nav.jsx";
+import Footer from "./Components/footer/Footer.jsx";
+import { Routes, Route } from "react-router-dom";
 
+import Home from "./Home/Home.jsx";
+import Products from "./Products/Products.jsx";
+import Service from "./Service/Service.jsx";
+import Contact from "./Contact/Contact.jsx";
+import New from "./News/New.jsx";
+import Signin from "./LogReg/Signin.jsx";
+import Signup from "./LogReg/Signup.jsx";
+import About from "./About/About.jsx";
+function App() {
   return (
     <>
-<GarderobeNavba />
- <Footer/>
-   </>
-  )
+      <Nav />
+
+      <Routes>
+        {/* Home */}
+        <Route path="/" element={<Home />} />
+
+        {/* Products */}
+        <Route path="/products" element={<Products />} />
+
+        {/* Service */}
+        <Route path="/services" element={<Service />} />
+
+        {/* News */}
+        <Route path="/news" element={<New />} />
+
+        {/* Contact */}
+        <Route path="/contact" element={<Contact />} />
+      {/* About */}
+        <Route path="/about" element={<About />} />
+
+        {/* Auth */}
+        <Route path="/signin" element={<Signin />} />
+        <Route path="/signup" element={<Signup />} />
+
+        {/* 404 */}
+        <Route
+          path="*"
+          element={
+            <h1 style={{ textAlign: "center", marginTop: "2rem" }}>
+              Page Not Found
+            </h1>
+          }
+        />
+      </Routes>
+
+      <Footer />
+    </>
+  );
 }
 
-export default App
+export default App;
