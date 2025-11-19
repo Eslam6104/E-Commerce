@@ -1,11 +1,14 @@
 import { useState } from 'react'
-
+import GarderobeNavba from './Components/Nav'
+import Footer from './Components/footer/Footer.jsx'
 function App() {
  
 
   return (
     <>
-  <div className='h1'>sjfhf</div>    </>
+<GarderobeNavba />
+ <Footer/>
+   </>
   )
 }
 
