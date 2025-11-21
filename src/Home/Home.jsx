@@ -1,10 +1,10 @@
 import React from 'react'
-
+import NewsSection from '../Components/News/NewsSection';
+import { blogPosts } from '../Components/News/NewsData';
 function Home() {
   return (
-    <div>
-      home
-    </div>
+      <NewsSection newsData={blogPosts} limit={3} />
+    
   )
 }
 
