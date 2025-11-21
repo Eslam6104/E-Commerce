@@ -1,6 +1,6 @@
 // src/components/search.jsx
 import React, { useState } from "react";
-import "./search.css";
+import "../assets/style/search.css";
 import { useNavigate } from "react-router-dom";
 
 const Search = () => {

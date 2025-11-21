@@ -1,17 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../components/hero.css"
-import "../components/categories.css"
-import categories from "../assets/categories";
-import "../components/sales.css"
-import salesData from "../assets/salesData";
-import heroImg from "../assets/images/hero.webp"; // 👈 adjust path/name if needed
+import { useCart } from "react-use-cart";
+
+import "../assets/style/hero.css";
+import "../assets/style/categories.css";
+import "../assets/style/sales.css";
+
+import categories from "../assets/categories.js";
+import salesData from "../assets/salesData.js";
+import heroImg from "../assets/images/hero.webp";
 
 function Home() {
+  const { addItem } = useCart();
+
   return (
     <>
       {/*  Hero section */}
-      <section className="hero-section d-flex align-items-center">
+            <section className="hero-section d-flex align-items-center">
         <div className="container">
           <div className="row align-items-center">
             {/*  text */}
@@ -102,7 +107,6 @@ function Home() {
       </section>
 
       {/* BOTTOM black Section */}
-           {/* BOTTOM black Section */}
       <section className="hero-strip text-white py-4">
         <div className="container">
           <div className="row text-center gy-4">
@@ -184,79 +188,102 @@ function Home() {
         </div>
       </section>
 
+      {/* Categories */}
       <section className="categories-section">
-      <div className="categories-grid">
-        {categories.map((cat) => (
-          <article className="category-card" key={cat.id}>
-            <div className="category-image-wrap">
-              <img
-                src={cat.image}
-                alt={cat.title}
-                className="category-image"
-              />
-            </div>
-
-            <div className="category-info">
-              <p className="category-articles">{cat.articles} articles</p>
-              <h3 className="category-title">{cat.title}</h3>
-            </div>
-          </article>
-        ))}
-      </div>
-    </section>
-
-    <section className="deals-section">
-      <div className="deals-inner">
-        {/* left side */}
-        <div className="deals-grid">
-          {salesData.map((item) => (
-            <article className="deal-card" key={item.id}>
-              <div className="deal-image-wrap">
-                <img src={item.image} alt={item.title} className="deal-image" />
+        <div className="categories-grid">
+          {categories.map((cat) => (
+            <article className="category-card" key={cat.id}>
+              <div className="category-image-wrap">
+                <img
+                  src={cat.image}
+                  alt={cat.title}
+                  className="category-image"
+                />
               </div>
 
-              <div className="deal-body">
-                <h3 className="deal-title">{item.title}</h3>
-
-                <div className="deal-price-row">
-                  <span className="deal-price">${item.price.toFixed(2)}</span>
-                  <span className="deal-old-price">
-                    ${item.oldPrice.toFixed(2)}
-                  </span>
-                </div>
-
-                <div className="deal-rating">
-                  {"★".repeat(item.rating)}
-                  {"☆".repeat(5 - item.rating)}
-                </div>
-
-                <p className="deal-category">{item.category}</p>
-
-                <button className="addToCart-btn">Add to cart</button>
+              <div className="category-info">
+                <p className="category-articles">{cat.articles} articles</p>
+                <h3 className="category-title">{cat.title}</h3>
               </div>
             </article>
           ))}
         </div>
+      </section>
 
-        {/* RIGHT sidee */}
-        <aside className="deals-copy">
-          <p className="deals-label">$50 ONLY!</p>
-          <h2 className="deals-heading">Final Sale</h2>
+      {/* Sales */}
+      <section className="deals-section">
+        <div className="deals-inner">
+          {/* left side */}
+          <div className="deals-grid">
+            {salesData.map((item) => (
+               <article className="deal-card" key={item.id}>
+                <div className="deal-image-wrap">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="deal-image"
+                  />
+                </div>
 
-          <p className="deals-text">
-            Mauris vitae ultricies leo integer malesuada cursus.
-          </p>
-          <p className="deals-text">
-            Odio tempor orci dapibus ultricies in. Egestas diam in arcu cursus
-            euismod dictum purus viverra accumsan.
-          </p>
-          <Link  to="/products" className="allDeals-btn">
-            ALL DEALS
-          </Link>
+                <div className="deal-body">
+                  <h3 className="deal-title">{item.title}</h3>
 
-        </aside>
-      </div>
-    </section>
+                  <div className="deal-price-row">
+                    <span className="deal-price">
+                      ${item.price.toFixed(2)}
+                    </span>
+                    <span className="deal-old-price">
+                      ${item.oldPrice.toFixed(2)}
+                    </span>
+                  </div>
+
+                  <div className="deal-rating">
+                    {"★".repeat(item.rating)}
+                    {"☆".repeat(5 - item.rating)}
+                  </div>
+
+                  <p className="deal-category">{item.category}</p>
+
+                 
+                  <button
+                    className="addToCart-btn"
+                    onClick={() => {
+                      
+                      addItem({
+                        id: item.id,
+                        price: item.price,
+                        title: item.title,
+                        image: item.image,
+                        category: item.category,
+                      });
+                      
+                    }}
+                  >
+                    Add to cart
+                  </button>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          {/* RIGHT side */}
+          <aside className="deals-copy">
+            <p className="deals-label">$50 ONLY!</p>
+            <h2 className="deals-heading">Final Sale</h2>
+
+            <p className="deals-text">
+              Mauris vitae ultricies leo integer malesuada cursus.
+            </p>
+            <p className="deals-text">
+              Odio tempor orci dapibus ultricies in. Egestas diam in arcu cursus
+              euismod dictum purus viverra accumsan.
+            </p>
+            <Link to="/products" className="allDeals-btn">
+              ALL DEALS
+            </Link>
+          </aside>
+        </div>
+      </section>
     </>
   );
 }

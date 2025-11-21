@@ -10,6 +10,7 @@ import New from "./News/New.jsx";
 import Signin from "./LogReg/Signin.jsx";
 import Signup from "./LogReg/Signup.jsx";
 import About from "./About/About.jsx";
+import "./App"
 function App() {
   return (
     <>
