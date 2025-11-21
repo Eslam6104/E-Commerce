@@ -9,9 +9,10 @@ import "../assets/style/sales.css";
 import categories from "../assets/categories.js";
 import salesData from "../assets/salesData.js";
 import heroImg from "../assets/images/hero.webp";
+import AddToCartButton from "../components/AddToCartButton.jsx";
 
 function Home() {
-  const { addItem } = useCart();
+  
 
   return (
     <>
@@ -245,22 +246,17 @@ function Home() {
                   <p className="deal-category">{item.category}</p>
 
                  
-                  <button
-                    className="addToCart-btn"
-                    onClick={() => {
-                      
-                      addItem({
-                        id: item.id,
-                        price: item.price,
-                        title: item.title,
-                        image: item.image,
-                        category: item.category,
-                      });
-                      
-                    }}
-                  >
-                    Add to cart
-                  </button>
+                  <AddToCartButton
+  product={{
+    id: item.id,
+    price: item.price,
+    title: item.title,
+    image: item.image,
+    category: item.category,
+  }}
+>
+  Add to cart
+</AddToCartButton>
                 </div>
               </article>
             ))}
