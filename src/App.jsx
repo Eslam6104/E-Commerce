@@ -10,7 +10,10 @@ import New from "./News/New.jsx";
 import Signin from "./LogReg/Signin.jsx";
 import Signup from "./LogReg/Signup.jsx";
 import About from "./About/About.jsx";
-import "./App"
+import Cart from "./Cart/Cart.jsx";
+import Checkout from "./Checkout/Checkout.jsx"; 
+import "./App.css";
+
 function App() {
   return (
     <>
@@ -31,12 +34,17 @@ function App() {
 
         {/* Contact */}
         <Route path="/contact" element={<Contact />} />
-      {/* About */}
+
+        {/* About */}
         <Route path="/about" element={<About />} />
 
         {/* Auth */}
         <Route path="/signin" element={<Signin />} />
         <Route path="/signup" element={<Signup />} />
+
+        {/* Cart & Checkout */}
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/checkout" element={<Checkout />} />
 
         {/* 404 */}
         <Route
