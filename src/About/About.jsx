@@ -35,7 +35,7 @@ function About() {
 
             {/* text section */}
             <div className="col-md-7 ps-md-5 mt-4 mt-md-0">
-              <h3 className="fw-bold mb-4 fs-1">Shoes Collection</h3>
+              <h3 className="fw-bold m-4 fs-1">Shoes Collection</h3>
               <div className="row text-secondary text-white mt-5">
                 <div className="col-lg-6">
                   <p>
