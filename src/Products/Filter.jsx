@@ -1,9 +1,9 @@
 import React from 'react';
 import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
-import useFilter from './UseFilter'; // 1. استدعاء الهوك الجديد
+import useFilter from './UseFilter'; 
 
-// داتا تجريبية (أو ممكن تستقبلها كـ props)
+// data test
 const productsData = [
   { id: 1, name: "Nike Air Max", category: "Shoes", price: 120 },
   { id: 2, name: "Adidas T-Shirt", category: "Clothes", price: 40 },
@@ -14,8 +14,7 @@ const productsData = [
 ];
 
 const FilterComponent = () => {
-  
-  // 2. استخدام الهوك للحصول على الداتا والوظائف
+    // hook use
   const { 
     filteredProducts, 
     selectedCategory, 
