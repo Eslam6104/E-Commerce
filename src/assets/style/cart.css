@@ -1,0 +1,126 @@
+.cart-page {
+  background-color: #fdfdfd;
+}
+
+.cart-title {
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.cart-table-wrapper {
+  background: #fff;
+}
+
+.cart-table-header {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #555;
+}
+
+.cart-row {
+  font-size: 0.95rem;
+}
+
+.cart-product-thumb img {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 2px;
+  border: 1px solid #eee;
+  background: #fafafa;
+}
+
+.cart-product-name {
+  font-weight: 600;
+}
+
+.cart-product-price {
+  font-size: 0.85rem;
+}
+
+.cart-qty-col {
+  width: 180px;
+}
+
+.cart-subtotal-col {
+  width: 130px;
+}
+
+.cart-qty-control {
+  border: 1px solid #e74c3c;
+  border-radius: 0;
+  padding: 2px 6px;
+  min-width: 110px;
+  justify-content: space-between;
+}
+
+.qty-btn {
+  border: none;
+  background: transparent;
+  font-size: 1rem;
+  width: 28px;
+  height: 28px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.qty-btn:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.qty-value {
+  min-width: 24px;
+  text-align: center;
+}
+
+.cart-row-subtotal {
+  font-size: 0.95rem;
+}
+
+.cart-remove-btn {
+  margin-left: 8px;
+}
+
+.cart-actions {
+  margin-top: 1rem;
+}
+
+.cart-coupon-input {
+  max-width: 230px;
+}
+
+.cart-coupon-btn {
+  white-space: nowrap;
+}
+
+.cart-update-btn {
+  background: #f8b4b4;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.4rem;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+.cart-update-btn:disabled {
+  opacity: 0.7;
+}
+
+.cart-totals-card {
+  background: #fff;
+}
+
+.cart-totals-title {
+  font-weight: 600;
+}
+
+.cart-totals-row {
+  font-size: 0.9rem;
+}
+
+.cart-checkout-btn {
+  text-transform: none;
+  font-weight: 600;
+}

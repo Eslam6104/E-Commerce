@@ -1,0 +1,168 @@
+.deals-section {
+  padding: 5rem 0;
+  background: #0b0a10;
+  color: #fff;
+}
+
+.deals-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 2.4fr) minmax(0, 1.6fr);
+  gap: 3rem;
+  align-items: flex-start;
+}
+
+.deals-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2rem;
+}
+.deal-card {
+  cursor: pointer;
+}
+
+.deal-card-inner {
+  position: relative;
+  background: transparent;
+  padding: 0 0 2rem 0;
+  color: #fff;
+}
+.deal-image-wrap {
+  position: relative;
+  background: #ffffff;
+  padding: 2.5rem 2.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.35);
+  margin-bottom: 1.8rem;
+}
+
+.deal-image {
+  max-width: 180px;
+  height: auto;
+}
+
+.deal-body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+.deal-title {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: #ffffff;
+}
+
+.deal-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  margin-bottom: 0.4rem;
+}
+
+.deal-price {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #ffffff;
+}
+
+.deal-old-price {
+  font-size: 0.8rem;
+  color: #999;
+  text-decoration: line-through;
+}
+
+.deal-rating {
+  color: #ffb400;
+  font-size: 0.85rem;
+  margin-bottom: 0.4rem;
+}
+
+.deal-category {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: #aaaaaa;
+  margin-bottom: 1.2rem;
+}
+
+.addToCart-btn {
+  padding: 0.65rem 1.6rem;
+  border: none;
+  background: #e53935;
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.addToCart-btn:hover {
+  background: #ff4242;
+  transform: translateY(-1px);
+}
+
+.allDeals-btn {
+  display: inline-block;
+  padding: 0.8rem 1.8rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: transparent;
+  border: 2px solid #ffffff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.allDeals-btn:hover {
+  background: #ff4242;
+  color: #000000;
+  border-color: #ff4242;
+}
+
+@media (max-width: 992px) {
+  .deals-section {
+    padding: 3.5rem 1.5rem;
+  }
+
+  .deals-inner {
+    grid-template-columns: 1fr;    
+    gap: 2.5rem;
+  }
+
+  .deals-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)); 
+  }
+
+  .deal-image-wrap {
+    padding: 2rem 1.8rem;
+  }
+
+  .deal-image {
+    max-width: 150px;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .deals-section {
+    padding: 3rem 1rem;
+  }
+
+  .deals-grid {
+    grid-template-columns: 1fr; 
+  }
+
+  .deal-image-wrap {
+    padding: 1.7rem 1.4rem;
+  }
+
+  .deal-image {
+    max-width: 140px;
+  }
+}

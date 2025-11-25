@@ -1,0 +1,132 @@
+.mission-section {
+  padding: 5rem 0;
+  background-color: #ffffff;
+  font-family: system-ui, -apple-system, "Segoe UI",sans-serif;
+}
+
+.mission-container {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 3rem;
+
+}
+
+.mission-text {
+  color: #111;
+}
+
+.mission-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #e53935;
+  margin-bottom: 1.25rem;
+}
+
+.mission-title {
+  font-size: 2.6rem;
+  line-height: 1.2;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+}
+
+.mission-intro {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  max-width: 520px;
+  margin-bottom: 2.5rem;
+}
+
+.mission-accordion {
+  border-top: 1px solid #eee;
+  margin-bottom: 2.5rem;
+}
+
+.mission-item {
+  border-bottom: 1px solid #eee;
+  padding: 0.9rem 0;
+}
+
+
+.mission-item summary {
+  display: none;
+}
+
+.mission-item summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #111;
+}
+
+/* Plus / minus icon */
+.mission-toggle::after {
+  content: "+";
+  font-size: 1.2rem;
+  color: #999;
+}
+
+.mission-item[open] .mission-toggle::after {
+  content: "-";
+}
+
+.mission-desc {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  margin-top: 0;
+  transition: max-height 0.3s ease, opacity 0.3s ease, margin-top 0.3s ease;
+}
+.mission-item[open] .mission-desc {
+  max-height: 200px; 
+  opacity: 1;
+  margin-top: 0.7rem;
+}
+
+/* Button */
+.mission-btn {
+  margin-top: 0.5rem;
+  padding: 0.9rem 2.4rem;
+  border: 1px solid #000;
+  background: transparent;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.mission-btn:hover {
+  background: #e53935;
+  color: #fff;
+  border: 1px solid #e53935;;
+}
+
+
+.mission-image {
+  width:100%;
+  height: auto;
+  object-fit: cover;
+}
+
+@media (max-width: 900px) {
+  .mission-container {
+    grid-template-columns: 1fr;
+  }
+
+  .mission-image-wrap {
+    order: -1;
+  }
+
+  .mission-title {
+    font-size: 2.1rem;
+  }
+}
