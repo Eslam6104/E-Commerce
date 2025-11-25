@@ -43,41 +43,25 @@ export default function Nav() {
             ))}
           </nav>
 
-          <div className="d-none d-lg-flex align-items-center gap-3">
-            <button className="btn p-0 border-0 bg-transparent">
-              <Search size={18} />
-            </button>
-            <button className="btn p-0 border-0 bg-transparent">
-              <User size={18} />
-            </button>
-            <button className="btn p-0 border-0 bg-transparent position-relative">
-              <span
-                className="position-absolute top-0 start-100 translate-middle"
-                style={{ fontSize: 10 }}
-              >
-                0
-              </span>
-              <ShoppingBag size={18} />
-            </button>
-          </div>
+        
 
-          <div className="d-flex d-lg-none align-items-center gap-3">
-            <button className="btn p-0 border-0 bg-transparent position-relative">
-              <span
-                className="position-absolute top-0 start-100 translate-middle"
-                style={{ fontSize: 10 }}
-              >
-                0
-              </span>
-              <ShoppingBag size={20} />
-            </button>
-            <button
-              className="btn p-0 border-0 bg-transparent"
-              onClick={() => setOpen(!open)}
-            >
-              <Menu size={22} />
-            </button>
-          </div>
+      <div className="d-none d-lg-flex align-items-center gap-3">
+  <button className="btn p-0 border-0 bg-transparent">
+    <Search size={18} />
+  </button>
+
+  <Link to="/signin" className="btn p-0 border-0 bg-transparent">
+    <User size={18} />
+  </Link>
+
+  <Link to="/cart" className="btn p-0 border-0 bg-transparent position-relative">
+    <span className="position-absolute top-0 start-100 translate-middle" style={{ fontSize: 10 }}>
+      0
+    </span>
+    <ShoppingBag size={18} />
+  </Link>
+</div>
+
         </div>
       </header>
 

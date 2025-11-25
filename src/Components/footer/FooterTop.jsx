@@ -2,7 +2,6 @@
  * Top section of the footer: four columns (about, account, shipping, contact).
  */
 import React from "react";
-
 const FooterTop = () => (
   <div className="container py-5">
     <div className="row text-center text-md-start">
