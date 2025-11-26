@@ -1,7 +1,6 @@
 import Nav from "./Components/Nav.jsx";
 import Footer from "./Components/footer/Footer.jsx";
 import { Routes, Route } from "react-router-dom";
-
 import Home from "./Home/Home.jsx";
 import Products from "./Products/Products.jsx";
 import Service from "./Service/Service.jsx";
