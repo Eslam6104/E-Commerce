@@ -12,12 +12,10 @@ import heroImg from "../assets/images/hero.webp";
 import AddToCartButton from "../components/AddToCartButton.jsx";
 
 function Home() {
-  
-
   return (
     <>
       {/*  Hero section */}
-            <section className="hero-section d-flex align-items-center">
+      <section className="hero-section d-flex align-items-center">
         <div className="container">
           <div className="row align-items-center">
             {/*  text */}
@@ -217,7 +215,7 @@ function Home() {
           {/* left side */}
           <div className="deals-grid">
             {salesData.map((item) => (
-               <article className="deal-card" key={item.id}>
+              <article className="deal-card" key={item.id}>
                 <div className="deal-image-wrap">
                   <img
                     src={item.image}
@@ -230,9 +228,7 @@ function Home() {
                   <h3 className="deal-title">{item.title}</h3>
 
                   <div className="deal-price-row">
-                    <span className="deal-price">
-                      ${item.price.toFixed(2)}
-                    </span>
+                    <span className="deal-price">${item.price.toFixed(2)}</span>
                     <span className="deal-old-price">
                       ${item.oldPrice.toFixed(2)}
                     </span>
@@ -245,18 +241,17 @@ function Home() {
 
                   <p className="deal-category">{item.category}</p>
 
-                 
                   <AddToCartButton
-  product={{
-    id: item.id,
-    price: item.price,
-    title: item.title,
-    image: item.image,
-    category: item.category,
-  }}
->
-  Add to cart
-</AddToCartButton>
+                    product={{
+                      id: item.id,
+                      price: item.price,
+                      title: item.title,
+                      image: item.image,
+                      category: item.category,
+                    }}
+                  >
+                    Add to cart
+                  </AddToCartButton>
                 </div>
               </article>
             ))}
