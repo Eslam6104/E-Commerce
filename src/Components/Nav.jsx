@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Search, User, ShoppingBag, Menu, Trash2 } from "lucide-react";
 import { useCart } from "react-use-cart";
 
@@ -13,9 +13,10 @@ const links = [
 ];
 
 export default function Nav() {
-  const [open, setOpen] = useState(false);          // mobile menu
-  const [cartOpen, setCartOpen] = useState(false);  // cart dropdown
+  const [open, setOpen] = useState(false);         
+  const [cartOpen, setCartOpen] = useState(false); 
   const { pathname } = useLocation();
+  const navigate = useNavigate();                  
 
   const { items, totalItems, cartTotal, removeItem } = useCart();
 
@@ -23,10 +24,12 @@ export default function Nav() {
     "text-decoration-none text-uppercase small me-4 " +
     (pathname === path ? "text-danger fw-bold" : "text-secondary");
 
+
   return (
     <>
       <header className="border-bottom bg-white fixed-top">
         <div className="container d-flex align-items-center justify-content-between py-2">
+          
           {/* LOGO */}
           <Link
             to="/"
@@ -55,11 +58,12 @@ export default function Nav() {
             <button className="btn p-0 border-0 bg-transparent">
               <Search size={18} />
             </button>
+
             <button className="btn p-0 border-0 bg-transparent">
               <User size={18} />
             </button>
 
-            {/* CART ICON + DROPDOWN */}
+            {/* Cart icon + dropdown (Desktop Only) */}
             <div
               className="position-relative"
               onMouseEnter={() => setCartOpen(true)}
@@ -83,7 +87,7 @@ export default function Nav() {
                   style={{
                     position: "absolute",
                     right: 0,
-                    top: "120%",
+                    top: "100%",
                     width: 280,
                     zIndex: 1000,
                   }}
@@ -92,9 +96,7 @@ export default function Nav() {
                     <h6 className="mb-3 text-uppercase small">Your Cart</h6>
 
                     {items.length === 0 ? (
-                      <p className="mb-0 small text-muted">
-                        No items in your cart.
-                      </p>
+                      <p className="mb-0 small text-white">No items in your cart.</p>
                     ) : (
                       <>
                         <ul className="list-unstyled mb-3">
@@ -106,7 +108,7 @@ export default function Nav() {
                               {item.image && (
                                 <img
                                   src={item.image}
-                                  alt={item.title || item.name}
+                                  alt={item.title }
                                   style={{
                                     width: 40,
                                     height: 40,
@@ -119,7 +121,7 @@ export default function Nav() {
 
                               <div className="flex-grow-1">
                                 <div className="small fw-semibold">
-                                  {item.title || item.name}
+                                  {item.title }
                                 </div>
                                 <div className="small text-white-50">
                                   {item.quantity} × ${item.price.toFixed(2)}
@@ -165,7 +167,11 @@ export default function Nav() {
 
           {/* MOBILE ICONS */}
           <div className="d-flex d-lg-none align-items-center gap-3">
-            <button className="btn p-0 border-0 bg-transparent position-relative">
+            {/* MOBILE CART → redirect to /cart */}
+            <button
+              className="btn p-0 border-0 bg-transparent position-relative"
+              onClick={() => navigate("/cart")}   // <-- MOBILE REDIRECT HERE
+            >
               {totalItems > 0 && (
                 <span
                   className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
@@ -176,6 +182,8 @@ export default function Nav() {
               )}
               <ShoppingBag size={20} />
             </button>
+
+            {/* MOBILE MENU BUTTON */}
             <button
               className="btn p-0 border-0 bg-transparent"
               onClick={() => setOpen(!open)}

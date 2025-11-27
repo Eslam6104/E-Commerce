@@ -1,0 +1,33 @@
+    .newsletter-bg {
+    position: relative;
+    padding: 4rem 1rem;
+    background: #0a0606;
+    overflow: hidden;
+    color: white;
+    text-align: center;
+    }
+    .newsletter-bg::before,
+    .newsletter-bg::after {
+    content: "";
+    position: absolute;
+    top: -10%;
+    bottom: -10%;
+    width: 14%;
+    background: linear-gradient(to bottom, #ff3b30, #6d0200);
+    opacity: 0.85;
+        }
+
+    .newsletter-bg::before {
+    left: 25%;
+    transform: skewX(-8deg);
+    }
+
+    .newsletter-bg::after {
+    left: 48%;
+    transform: skewX(-6deg);
+    filter: brightness(0.7);
+    }
+    .newsletter-content {
+    position: relative;
+    z-index: 2;
+    }

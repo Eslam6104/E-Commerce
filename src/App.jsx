@@ -12,10 +12,13 @@ import Signup from "./LogReg/Signup.jsx";
 import About from "./About/About.jsx";
 import Checkout from "./Checkout/Checkout.jsx"; 
 import "./App.css";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   return (
     <>
+      <Toaster position="top-center" reverseOrder={false} />
+
       <Nav />
 
       <Routes>

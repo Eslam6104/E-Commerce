@@ -1,7 +1,7 @@
 .mission-section {
-  padding: 5rem 0;
+  padding: 5rem 1.5rem;
   background-color: #ffffff;
-  font-family: system-ui, -apple-system, "Segoe UI",sans-serif;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
 }
 
 .mission-container {
@@ -10,7 +10,7 @@
   display: grid;
   grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
   gap: 3rem;
-
+  align-items: center;
 }
 
 .mission-text {
@@ -50,13 +50,12 @@
   border-bottom: 1px solid #eee;
   padding: 0.9rem 0;
 }
-
-
-.mission-item summary {
-  display: none;
-}
-
-.mission-item summary {
+.mission-summary {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -64,33 +63,46 @@
   font-weight: 600;
   font-size: 0.95rem;
   color: #111;
+  text-align: left;
 }
 
-/* Plus / minus icon */
+.mission-summary:focus-visible {
+  outline: 2px solid #e53935;
+  outline-offset: 3px;
+}
+
 .mission-toggle::after {
   content: "+";
   font-size: 1.2rem;
   color: #999;
 }
 
-.mission-item[open] .mission-toggle::after {
+.mission-item.is-open .mission-toggle::after {
   content: "-";
+}
+.mission-panel {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition:
+    max-height 0.3s ease,
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+.mission-item.is-open .mission-panel {
+  max-height: 200px;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .mission-desc {
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
-  margin-top: 0;
-  transition: max-height 0.3s ease, opacity 0.3s ease, margin-top 0.3s ease;
-}
-.mission-item[open] .mission-desc {
-  max-height: 200px; 
-  opacity: 1;
+  color: #555;
+  font-size: 0.9rem;
+  line-height: 1.6;
   margin-top: 0.7rem;
 }
-
-/* Button */
 .mission-btn {
   margin-top: 0.5rem;
   padding: 0.9rem 2.4rem;
@@ -107,26 +119,71 @@
 .mission-btn:hover {
   background: #e53935;
   color: #fff;
-  border: 1px solid #e53935;;
+  border: 1px solid #e53935;
 }
-
 
 .mission-image {
-  width:100%;
+  width: 100%;
   height: auto;
   object-fit: cover;
+  display: block;
 }
-
 @media (max-width: 900px) {
-  .mission-container {
-    grid-template-columns: 1fr;
+  .mission-section {
+    padding: 4rem 1.25rem;
   }
 
-  .mission-image-wrap {
-    order: -1;
+  .mission-container {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .mission-text {
+    order: 2;
+  }
+
+  .mission-image {
+    order: 1;
+    max-width: 480px;
+    margin: 0 auto;
+    border-radius: 8px;
   }
 
   .mission-title {
     font-size: 2.1rem;
+  }
+
+  .mission-intro {
+    max-width: 100%;
+  }
+}
+@media (max-width: 600px) {
+  .mission-section {
+    padding: 3rem 1rem;
+  }
+
+  .mission-title {
+    font-size: 1.8rem;
+  }
+
+  .mission-label {
+    font-size: 0.75rem;
+  }
+
+  .mission-intro {
+    font-size: 0.9rem;
+  }
+
+  .mission-summary {
+    font-size: 0.9rem;
+  }
+
+  .mission-desc {
+    font-size: 0.85rem;
+  }
+
+  .mission-btn {
+    width: 100%;
+    text-align: center;
   }
 }

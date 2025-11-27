@@ -16,7 +16,7 @@ export default function AddToCartButton({ product, children }) {
         addItem(product);
       }}
     >
-      {children || "Add to cart"}
+      {"Add to cart"}
     </button>
   );
 }

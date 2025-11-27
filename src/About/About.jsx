@@ -1,61 +1,49 @@
 import React from "react";
-import HeaderOfSections from '../Components/headerOfSections/headerOfSections';
-import { href } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "../assets/style/jordans.css";
+import jordansImg from "../assets/images/jordans.jpeg";
+import NewsLetter from "../components/newsLetter";
+
+
 function About() {
   return (
     <>
-      {/* title */}
-      <HeaderOfSections
-        title="About Us"
-        breadcrumbs={[
-          { label: "Home", href: "/" },
-          { label: "About Us" },
-        ]}
-      />
+    <section className="container-fluid my-5 py-5">
+      <div className="row align-items-center">
 
-      {/* content section */}
-      <div
-        style={{ backgroundColor: "#0d0d0d", color: "#fff" }}
-        className="container pb-5"
-      >
-        <div className="container ">
-          <div className="row align-items-center">
-            {/* image section */}
-            <div className="col-md-5">
-              <img
-                src="https://res.cloudinary.com/dcwhmrmqa/image/upload/v1763746893/about-us-collection-section_optimized_nsvyil.webp"
-                alt="About Shoes"
-                className="img-fluid shadow-lg w-100"
-                style={{
-                  marginTop: "-120px",
-                  objectFit: "cover",
-                }}
-              />
-            </div>
+        {/* left column */}
+        <div className="col-lg-6 px-5">
+          <h2 className="fw-semibold" style={{ fontSize: "2.5rem" }}>
+            Shop The 5 Biggest <br /> Shoe Trends
+          </h2>
 
-            {/* text section */}
-            <div className="col-md-7 ps-md-5 mt-4 mt-md-0">
-              <h3 className="fw-bold m-4 fs-1">Shoes Collection</h3>
-              <div className="row text-secondary text-white mt-5">
-                <div className="col-lg-6">
-                  <p>
-                    Fusce at nisi eget dolor rhoncus facilisis. Mauris ante
-                    nisl, consectetur et luctus et, porta ut dolor. Mauris
-                    ultrices ultrices neque eget hendrerit.
-                  </p>
-                </div>
-                <div className="col-lg-6">
-                  <p>
-                    Fusce at nisi eget dolor rhoncus facilisis. Mauris ante
-                    nisl, consectetur et luctus et, porta ut dolor. Mauris
-                    ultrices ultrices neque eget hendrerit.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+          <p className="mt-4 mb-4" style={{ fontSize: "1.05rem", color: "#6c757d" }}>
+            Mauris vitae ultricies leo integer malesuada. Ac odio tempor orci
+            dapibus ultrices in. Egestas diam in arcu cursus euismod. Dictum
+            purus viverra accumsan in nisl.
+          </p>
+
+          <button
+            className="btn btn-danger fw-semibold"
+            style={{ padding: "12px 28px", fontSize: "1rem" }}
+          >
+            SHOP NOW
+          </button>
         </div>
+
+        {/* right column — image */}
+        <div className="col-lg-6 text-center">
+          <img
+            src={jordansImg}
+            alt="Jordans"
+            className="img-fluid"
+            style={{ width: "75%" }}
+          />
+        </div>
+
       </div>
+    </section>
+    <NewsLetter></NewsLetter>
     </>
   );
 }

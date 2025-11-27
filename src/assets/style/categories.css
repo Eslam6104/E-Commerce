@@ -14,7 +14,6 @@
 
 .category-card {
   position: relative;
-  cursor: pointer;
   overflow: hidden;
 }
 
@@ -32,11 +31,18 @@
 
   background: #111119;
   color: #fff;
+  text-decoration: none;
 
   padding: 1.5rem 2rem;
   width: 55%;
   transition: all 0.4s ease;
 }
+a.category-info,
+a.category-info * {
+  color: #fff !important;
+  text-decoration: none !important;
+}
+
 
 .category-articles {
   font-size: 0.85rem;
