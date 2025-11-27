@@ -10,7 +10,6 @@ import New from "./News/New.jsx";
 import Signin from "./LogReg/Signin.jsx";
 import Signup from "./LogReg/Signup.jsx";
 import About from "./About/About.jsx";
-import Cart from "./Cart/Cart.jsx";
 import Checkout from "./Checkout/Checkout.jsx"; 
 import "./App.css";
 
