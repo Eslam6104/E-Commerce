@@ -35,7 +35,7 @@ function Cart() {
         <h2 className="mb-4 cart-title">Cart</h2>
 
         <div className="row">
-          {/* LEFT: items table */}
+          {/* LEFT:   items table */}
           <div className="col-lg-8">
             <div className="cart-table-wrapper">
               <div className="cart-table-header d-none d-md-flex">

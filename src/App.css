@@ -8,7 +8,7 @@
   pointer-events: auto !important;
 }
 
-/* dropdown is hidden by default */
+
 .cart-dropdown {
   opacity: 0;
   visibility: hidden;

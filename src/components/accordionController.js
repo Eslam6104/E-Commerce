@@ -1,9 +1,9 @@
 export const setupAccordion = (detailsRef) => {
   return (index) => {
     const current = detailsRef.current[index];
-    if (current && current.open) {
+    if (current.open) {
       detailsRef.current.forEach((detail, i) => {
-        if (i !== index && detail) {
+        if (i !== index) {
           detail.open = false;
         }
       });

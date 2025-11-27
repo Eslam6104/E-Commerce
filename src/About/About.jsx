@@ -2,9 +2,11 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../assets/style/jordans.css";
 import jordansImg from "../assets/images/jordans.jpeg";
+import NewsLetter from "../components/newsLetter";
 
 function About() {
   return (
+    <>
     <section className="container-fluid my-5 py-5">
       <div className="row align-items-center">
 
@@ -40,6 +42,8 @@ function About() {
 
       </div>
     </section>
+    <NewsLetter></NewsLetter>
+    </>
   );
 }
 

@@ -96,7 +96,7 @@ export default function Nav() {
                     <h6 className="mb-3 text-uppercase small">Your Cart</h6>
 
                     {items.length === 0 ? (
-                      <p className="mb-0 small text-muted">No items in your cart.</p>
+                      <p className="mb-0 small text-white">No items in your cart.</p>
                     ) : (
                       <>
                         <ul className="list-unstyled mb-3">
@@ -108,7 +108,7 @@ export default function Nav() {
                               {item.image && (
                                 <img
                                   src={item.image}
-                                  alt={item.title || item.name}
+                                  alt={item.title }
                                   style={{
                                     width: 40,
                                     height: 40,
@@ -121,7 +121,7 @@ export default function Nav() {
 
                               <div className="flex-grow-1">
                                 <div className="small fw-semibold">
-                                  {item.title || item.name}
+                                  {item.title }
                                 </div>
                                 <div className="small text-white-50">
                                   {item.quantity} × ${item.price.toFixed(2)}

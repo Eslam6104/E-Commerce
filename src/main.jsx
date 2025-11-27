@@ -6,7 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Provider } from "react-redux";
 import { store } from "./Store/Store.js";
 import { BrowserRouter } from "react-router-dom";
-import { CartProvider } from "react-use-cart";   // ⬅️ ADD THIS LINE
+import { CartProvider } from "react-use-cart";  
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>

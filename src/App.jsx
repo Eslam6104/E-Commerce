@@ -12,10 +12,13 @@ import About from "./About/About.jsx";
 import Cart from "./Cart/Cart.jsx";
 import Checkout from "./Checkout/Checkout.jsx"; 
 import "./App.css";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   return (
     <>
+      <Toaster position="top-right" reverseOrder={false} />
+
       <Nav />
 
       <Routes>

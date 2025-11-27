@@ -117,12 +117,14 @@
   margin-top: 1.5rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  text-decoration: none;
 }
 
 .allDeals-btn:hover {
   background: #ff4242;
   color: #000000;
   border-color: #ff4242;
+  text-decoration: none;
 }
 
 @media (max-width: 992px) {
