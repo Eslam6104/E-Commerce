@@ -1,7 +1,6 @@
 import React, { useRef } from "react";
 import "../assets/style/mission2.css";
 import missionImg from "../assets/images/mission2.webp";
-import { setupAccordion } from "../components/accordionController";
 import Mission2 from "./mission2"
 
 function Service() {
