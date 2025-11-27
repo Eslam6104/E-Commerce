@@ -4,6 +4,7 @@ import "../assets/style/jordans.css";
 import jordansImg from "../assets/images/jordans.jpeg";
 import NewsLetter from "../components/newsLetter";
 
+
 function About() {
   return (
     <>
