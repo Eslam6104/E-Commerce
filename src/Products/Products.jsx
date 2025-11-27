@@ -1,7 +1,7 @@
 import React from "react";
 import FilterComponent from "./Filter"
 import HeaderOfSections from '../Components/headerOfSections/headerOfSections';
-
+import CardSection from '../Components/CardSection/CardSection.jsx';
 function Products() {
   return (
     <>
