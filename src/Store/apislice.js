@@ -3,10 +3,19 @@ export const apiSlice = createApi({
   reducerPath: "productApi",
   baseQuery: fetchBaseQuery({ baseUrl: "https://dummyjson.com" }),
   endpoints: (builder) => ({
+    // Get all products
     getProducts: builder.query({
       query: () => "/products",
+      transformResponse: (res) => {
+        if (Array.isArray(res?.products)) return res.products;
+        console.error("Unexpected API shape", res);
+        return [];
+      },
+    }),
 
-      // Clean up DummyJSON result
+    //  Search products by keyword
+    searchProducts: builder.query({
+      query: (term) => `/products/search?q=${encodeURIComponent(term)}`,
       transformResponse: (res) => {
         if (Array.isArray(res?.products)) return res.products;
         console.error("Unexpected API shape", res);
@@ -16,4 +25,4 @@ export const apiSlice = createApi({
   }),
 });
 
-export const { useGetProductsQuery } = apiSlice;
+export const { useGetProductsQuery, useSearchProductsQuery } = apiSlice;

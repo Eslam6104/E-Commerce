@@ -1,80 +1,78 @@
-import React from 'react';
-import Slider from 'rc-slider';
-import 'rc-slider/assets/index.css';
-import useFilter from './UseFilter'; 
+import React from "react";
+import Slider from "rc-slider";
+import "rc-slider/assets/index.css";
+import useFilter from "./UseFilter";
+import CardSection from "../Components/CardSection/CardSection";
 
-// data test
-const productsData = [
-  { id: 1, name: "Nike Air Max", category: "Shoes", price: 120 },
-  { id: 2, name: "Adidas T-Shirt", category: "Clothes", price: 40 },
-  { id: 3, name: "Puma Running", category: "Shoes", price: 80 },
-  { id: 4, name: "Smart Watch", category: "Accessories", price: 200 },
-  { id: 5, name: "Jeans Pants", category: "Clothes", price: 60 },
-  { id: 6, name: "Cap", category: "Accessories", price: 25 },
-];
-
-const FilterComponent = () => {
-    // hook use
-  const { 
-    filteredProducts, 
-    selectedCategory, 
-    priceRange, 
-    handleCategoryChange, 
-    handleSliderChange 
-  } = useFilter(productsData);
+const Filter = ({ products }) => {
+  const {
+    filteredProducts,
+    categories,
+    selectedCategory,
+    setSelectedCategory,
+    priceRange,
+    setPriceRange,
+    maxPrice
+  } = useFilter(products);
 
   return (
     <div className="container py-5">
       <div className="row">
-        
-        {/* Sidebar Filter */}
+
+        {/* FILTER SIDEBAR */}
         <div className="col-md-3">
           <div className="border p-3 rounded">
-            <h4>Filter By</h4>
-            
-            {/* Category Filter */}
+
+            <h4 className="fw-bold">Filter</h4>
+
+            {/* CATEGORY FILTER */}
             <div className="mb-4">
               <label className="fw-bold mb-2">Category</label>
-              <select 
-                className="form-select" 
-                value={selectedCategory} 
-                onChange={handleCategoryChange}
+              <select
+                className="form-select"
+                value={selectedCategory}
+                onChange={(e) => setSelectedCategory(e.target.value)}
               >
-                <option value="All">All Categories</option>
-                <option value="Shoes">Shoes</option>
-                <option value="Clothes">Clothes</option>
-                <option value="Accessories">Accessories</option>
+                <option value="All">All</option>
+                {categories.map((cat) => (
+                  <option value={cat} key={cat}>
+                    {cat}
+                  </option>
+                ))}
               </select>
             </div>
 
-            {/* Price Filter */}
+            {/* PRICE FILTER */}
             <div className="mb-4">
-              <label className="fw-bold mb-3">Price Range</label>
+              <label className="fw-bold mb-2">Price Range</label>
+
               <Slider
                 range
                 min={0}
-                max={300}
-                defaultValue={[0, 300]}
+                max={maxPrice}
                 value={priceRange}
-                onChange={handleSliderChange}
-                trackStyle={{ backgroundColor: 'rgb(220, 53, 69)', height: 4 }}
-                handleStyle={{ borderColor: 'rgba(118, 18, 28, 1)', backgroundColor: 'white' }}
-                railStyle={{ backgroundColor: '#ccc', height: 4 }}
+                onChange={(v) => setPriceRange(v)}
               />
+
               <div className="d-flex justify-content-between mt-2">
-                <span className='p-2 pt-1 pb-1 border border-dark-subtle rounded-3 text-bg-danger text-white fw-bold fs-6'>${priceRange[0]}</span>
-                <span className='p-2 pt-1 pb-1 border border-dark-subtle rounded-3 text-bg-danger text-white fw-bold fs-6'>${priceRange[1]}</span>
+                <span>${priceRange[0]}</span>
+                <span>${priceRange[1]}</span>
               </div>
             </div>
+
           </div>
         </div>
 
-        {/* Products Display for the test*/}
 
 
+
+        {/* PRODUCT LIST HERE */}
+        <div className="col-md-9">
+          <CardSection data={filteredProducts} />
+        </div>
       </div>
     </div>
   );
 };
 
-export default FilterComponent;
+export default Filter;

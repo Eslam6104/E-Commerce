@@ -1,21 +1,17 @@
 import React from "react";
-import FilterComponent from "./Filter"
-import HeaderOfSections from '../Components/headerOfSections/headerOfSections';
+import Filter from "./Filter";
+import { useGetProductsQuery } from "../Store/apislice";
 
 function Products() {
+  const { data: products, isLoading, isError } = useGetProductsQuery();
+
+  if (isLoading) return <h2>Loading...</h2>;
+  if (isError) return <h2>Error loading products</h2>;
+
   return (
-    <>
-          <HeaderOfSections
-        title="Products"
-        breadcrumbs={[
-          { label: "Home", href: "/" },
-          { label: "Products" },
-        ]}
-      />
-    <div style={{ padding: "2rem" }}>
-      <FilterComponent/>
+    <div style={{ padding: "20px" }}>
+      <Filter products={products} />
     </div>
-    </>
   );
 }
 

@@ -1,0 +1,50 @@
+.checkout-page {
+  background-color: #fdfdfd;
+}
+
+.checkout-title {
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  margin-bottom: 2rem;
+}
+
+.checkout-section-title {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.checkout-form .form-label {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.checkout-form input,
+.checkout-form select,
+.checkout-form textarea {
+  border-radius: 0;
+  font-size: 0.9rem;
+}
+
+.checkout-order-card {
+  background: #fff;
+}
+
+.checkout-order-card .small {
+  font-size: 0.85rem;
+}
+
+.checkout-alert {
+  background: #f7f7f7;
+  border-radius: 2px;
+}
+
+.checkout-place-btn {
+  font-weight: 600;
+  text-transform: none;
+  border-radius: 0;
+}
+
+.checkout-privacy {
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
