@@ -13,7 +13,7 @@ import About from "./About/About.jsx";
 import Checkout from "./Checkout/Checkout.jsx"; 
 import "./App.css";
 import { Toaster } from "react-hot-toast";
-
+import ProductPage from "./ProductPage/ProductPage.jsx";
 function App() {
   return (
     <>
@@ -50,7 +50,7 @@ function App() {
         {/* Cart & Checkout */}
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />
-
+ <Route path="/product/:slug" element={<ProductPage />} />
         {/* 404 */}
         <Route
           path="*"
