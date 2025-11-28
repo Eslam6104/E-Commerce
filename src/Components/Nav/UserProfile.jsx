@@ -5,7 +5,10 @@ import { useAuth } from "../../LogReg/AuthContext";
 
 const UserProfile = () => {
   const { user, logout } = useAuth();
-
+  const getDisplayName = (fullName) => {
+    if (!fullName) return "User";
+    return fullName.split(' ').slice(0, 2).join(' ');
+  };
   // logged in user
   if (user) {
     return (
@@ -13,7 +16,7 @@ const UserProfile = () => {
         <div className="d-flex flex-column align-items-end" style={{ lineHeight: '1.2' }}>
           <span className="small text-muted" style={{ fontSize: '10px' }}>Welcome</span>
           <span className="fw-bold text-dark" style={{ fontSize: '14px' }}>
-            {user.name}
+            {getDisplayName(user.name)}
           </span>
         </div>
         <button
