@@ -3,32 +3,27 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../assets/style/newsLetter.css";
 import toast from "react-hot-toast";
 import { z } from "zod";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
 
-const newsletterSchema = z.object({
-  email: z
-    .string()
-    .min(1, "Email is required")
-    .email("Please enter a valid email address"),
+const schema = z.object({
+  email: z.string().email("Please enter a valid email"),
 });
 
 export default function NewsletterUpdates() {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors, isSubmitting },
-    reset,
-  } = useForm({
-    resolver: zodResolver(newsletterSchema),
-    defaultValues: {
-      email: "",
-    },
-  });
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-  const onSubmit = (data) => {
-    toast.success(`Subscribed with ${data.email}!`);
-    reset();
+    const formData = new FormData(e.target);
+    const email = formData.get("email");
+
+    const result = schema.safeParse({ email });
+
+    if (!result.success) {
+      toast.error(result.error.issues[0].message);
+      return;
+    }
+
+    toast.success(`Subscribed with ${email}!`);
+    e.target.reset();
   };
 
   return (
@@ -41,28 +36,21 @@ export default function NewsletterUpdates() {
 
         <form
           className="row g-2 justify-content-center"
-          onSubmit={handleSubmit(onSubmit)}
+          onSubmit={handleSubmit}
           noValidate
         >
           <div className="col-md-4 col-sm-8">
             <input
+              name="email"
               type="email"
               placeholder="Email address"
-              className={`form-control ${errors.email ? "is-invalid" : ""}`}
-              {...register("email")}
+              className="form-control"
             />
-            {errors.email && (
-              <div className="invalid-feedback">{errors.email.message}</div>
-            )}
           </div>
 
           <div className="col-md-auto col-sm-4">
-            <button
-              type="submit"
-              className="btn btn-danger px-4"
-              disabled={isSubmitting}
-            >
-              {isSubmitting ? "Subscribing..." : "Subscribe"}
+            <button type="submit" className="btn btn-danger px-4">
+              Subscribe
             </button>
           </div>
         </form>
