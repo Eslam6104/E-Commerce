@@ -8,8 +8,6 @@ import { Menu,ShoppingBag } from "lucide-react";
 import { useCart } from "react-use-cart";
 import NavbarSearch from "../NavSearch/NavbarSearch";
 import UserProfile from "./UserProfile";
-
-
 export default function Nav() {
   const { pathname } = useLocation();
   const { totalItems } = useCart();
@@ -30,22 +28,15 @@ export default function Nav() {
 
             {/* Right side icons */}
             <div className="d-flex align-items-center gap-3">
-              {/* Search icon */}
-              {/* <button className="btn p-0 border-0 bg-transparent d-none d-md-inline">
-                <Search size={20} />
-              </button> */}
+        
               <NavbarSearch></NavbarSearch>
-
-
-              {/* User icon */}
-              {/* <Link to="/signin" className="text-secondary">
-                <User size={20} />
-              </Link> */}
               <UserProfile></UserProfile>
 
               {/* Cart dropdown */}
               <div className="d-none d-md-inline">
+                <Link to="/cart">
                 <CartPreview />
+                </Link>
               </div>
 
               {/* Mobile cart badge */}

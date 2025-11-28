@@ -2,7 +2,6 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { useGetProductsQuery } from "../Store/apislice";
 import { parseProductSlug } from "../Components/slug";
-import ProductDetailsSection from "./DetailsSection/ProductDetailsSection";
 import MainInfo from "./MainInfo/MainInfo";
 function ProductPage() {
   const { slug } = useParams();
@@ -47,16 +46,12 @@ function ProductPage() {
       </div>
     );
   }
-
   return (
     <div className="container py-5">
       <div className="row g-4">
         {/* Main Info Section */}
         <div className="col-12">
           <MainInfo product={product} />
-        </div>  
-            <div className="col-12">
-          <ProductDetailsSection product={product} />
         </div>  
         
       </div>
