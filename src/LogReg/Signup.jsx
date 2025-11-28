@@ -6,7 +6,7 @@ import useAuthForm from './useAuthForm';
 function Signup() {
   const { register, handleSubmit, errors, onSubmit } = useAuthForm('signup');
   return (
-    <div className="container d-flex justify-content-center align-items-center" style={{ minHeight: "80vh" }}>
+    <div className="container d-flex justify-content-center align-items-center" style={{ minHeight: "80vh", marginTop:"100px"}}>
       <Toaster position="top-center" />
 
       <div className="card border-0 shadow-lg p-4" style={{ maxWidth: "450px", width: "100%" }}>

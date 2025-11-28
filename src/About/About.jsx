@@ -11,13 +11,15 @@ import TeamSection from "./OurTeam/TeamSection";
 function About() {
   return (
     <>
+      <div style={{ padding: "50px" }}>
       <HeaderOfSections
-        title="About US"
+        title="About Us"
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "About" },
         ]}
       />
+      </div>
       <AboutHero></AboutHero>
       <TeamSection></TeamSection>
       <TestimonialsSection></TestimonialsSection>

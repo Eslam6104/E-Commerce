@@ -4,9 +4,10 @@ import { Link, useLocation } from "react-router-dom";
 import Logo from "./Logo";
 import NavLinks from "./NavLinks";
 import CartPreview from "./CartPreview";
-import { Search, User, Menu,ShoppingBag } from "lucide-react";
+import { Menu,ShoppingBag } from "lucide-react";
 import { useCart } from "react-use-cart";
 import NavbarSearch from "../NavSearch/NavbarSearch";
+import UserProfile from "./UserProfile";
 
 
 export default function Nav() {
@@ -16,7 +17,7 @@ export default function Nav() {
   return (
     <>
       {/* MAIN NAV */}
-      <header className="border-bottom bg-white fixed-top">
+      <header className="border-bottom bg-white fixed-top py-3">
         <div className="container py-2">
           <div className="d-flex align-items-center justify-content-between">
             {/* Logo */}
@@ -37,9 +38,10 @@ export default function Nav() {
 
 
               {/* User icon */}
-              <Link to="/signin" className="text-secondary">
+              {/* <Link to="/signin" className="text-secondary">
                 <User size={20} />
-              </Link>
+              </Link> */}
+              <UserProfile></UserProfile>
 
               {/* Cart dropdown */}
               <div className="d-none d-md-inline">

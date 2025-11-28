@@ -13,13 +13,15 @@ function Service() {
 
   return (
     <>
-    <HeaderOfSections
-        title="Our Services"
+    <div style={{ padding: "50px" }}>
+      <HeaderOfSections
+        title="Services"
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Services" },
         ]}
       />
+      </div>
     <div className="py-5 bg-light"> 
       <div className="container">
         <div className="row g-4">

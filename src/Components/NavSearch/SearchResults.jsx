@@ -20,7 +20,7 @@ const SearchResults = () => {
   return (
     <>
         <div className="py-5 mt-5">
-      <div className="container mb-4">
+      <div className="container mb-4 mt-5">
         <h3>
           Search Results for: <span className="text-danger">"{query}"</span>
         </h3>
