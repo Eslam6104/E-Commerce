@@ -3,6 +3,9 @@ import HeaderOfSections from './../Components/headerOfSections/headerOfSections'
 import NewsLetter from '../components/newsLetter';
 import CardSecBlok from '../Components/CardSecBlock/CardSECBlok.jsx';
 import { useGetProductsQuery } from "../Store/apislice";
+import ContactSectionForm from './ContactSectionForm.jsx';
+import { Toaster } from "react-hot-toast";
+
 function Contact() {
       const { data: products } = useGetProductsQuery();
     const newArrivals = products ? products.slice(-4) : [];
@@ -17,6 +20,7 @@ function Contact() {
     : [];
   return (
     <div>
+        <Toaster position="top-center" />
        <HeaderOfSections
         title="Contact"
         breadcrumbs={[
@@ -24,6 +28,7 @@ function Contact() {
           { label: "Contact" },
         ]}
       />
+      <ContactSectionForm />
             <CardSecBlok
       title="New Arrivals"
       subtitle="Check out latest products"

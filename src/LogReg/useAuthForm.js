@@ -50,13 +50,13 @@ const useAuthForm = (type) => {
       
       setTimeout(() => {
         navigate("/"); // go to home page
-      }, 1500); //delay for 1.5 seconds
+      }, 500); //delay for 1.5 seconds
     } else {
 
       toast.success("Account created successfully! Please log in.");
       setTimeout(() => {
         navigate("/signin"); // go to login page
-      }, 1500); //delay for 1.5 seconds
+      }, 500); //delay for 1.5 seconds
     }
 
     reset();

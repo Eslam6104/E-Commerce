@@ -31,9 +31,9 @@ const NavbarSearch = () => {
     <div className="position-relative d-flex align-items-center">
       {/* open || close search */}
       <button
-        className="btn btn-link text-dark p-0 border-0"
+        className="btn btn-link text-secondary p-0 border-0"
         onClick={() => setIsOpen(!isOpen)}
-        style={{ fontSize: "1.2rem" }}
+        style={{ fontSize: "1rem" }}
       >
         {isOpen ? <FaTimes /> : <FaSearch />}
       </button>

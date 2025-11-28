@@ -15,7 +15,7 @@ function MissionSection({ data = missionSectionData }) {
               src={image}
               alt={title}
               className="img-fluid w-100"
-              style={{ objectFit: "cover" }}
+              style={{ objectFit: "cover",maxHeight: "600px" }}
             />
           </div>
 

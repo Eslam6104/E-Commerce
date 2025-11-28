@@ -1,4 +1,4 @@
-import Nav from "./Components/Nav.jsx";
+import Nav from "./Components/Nav/Nav.jsx";
 import Footer from "./Components/footer/Footer.jsx";
 import { Routes, Route } from "react-router-dom";
 import Cart from "./Cart/Cart.jsx";
@@ -18,9 +18,9 @@ import SearchResults from "./Components/NavSearch/SearchResults.jsx";
 function App() {
   return (
     <>
+    <Nav />
       <Toaster position="top-center" reverseOrder={false} />
 
-      <Nav />
 
       <Routes>
         {/* Home */}
@@ -40,7 +40,7 @@ function App() {
 
         {/* About */}
         <Route path="/about" element={<About />} />
-      {/* cart */}
+        {/* cart */}
         <Route path="/cart" element={<Cart />} />
            {/* Checkout */}
         <Route path="/checkout" element={<Checkout />} />
@@ -54,6 +54,7 @@ function App() {
 
         {/* Search */}
         <Route path="/search" element={<SearchResults />} />
+
         {/* 404 */}
         <Route
           path="*"

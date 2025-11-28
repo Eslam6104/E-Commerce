@@ -6,7 +6,7 @@ import "../assets/style/mission2.css";
 import Mission1 from "./Mession1/Mission1";
 import Mission2 from "./Mission2";
 import ServiceBrands from "./ServiceBrand";
-import TeamSection from "./OurTeam/TeamSection";
+import TeamSection from "../About/OurTeam/TeamSection";
 
 function Service() {
 
@@ -37,7 +37,6 @@ function Service() {
     </div>
       )
       <ServiceBrands></ServiceBrands>
-      <TeamSection></TeamSection>
       <Mission1></Mission1>
     <Mission2></Mission2>
     </>

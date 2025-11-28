@@ -7,7 +7,7 @@ import "../assets/style/jordans.css";
 import ShoeTtrends from "./ShoeTrends";
 import NewsLetter from "../Components/newsLetter";
 import AboutHero from "./AboutHero";
-
+import TeamSection from "./OurTeam/TeamSection";
 function About() {
   return (
     <>
@@ -19,8 +19,9 @@ function About() {
         ]}
       />
       <AboutHero></AboutHero>
-      <ShoeTtrends></ShoeTtrends>
+      <TeamSection></TeamSection>
       <TestimonialsSection></TestimonialsSection>
+      <ShoeTtrends></ShoeTtrends>
       <NewsLetter></NewsLetter>
     </>
   );
