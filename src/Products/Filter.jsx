@@ -70,29 +70,7 @@ const FilterComponent = () => {
         </div>
 
         {/* Products Display for the test*/}
-        <div className="col-md-9">
-          <div className="row">
-            {filteredProducts.length > 0 ? (
-              filteredProducts.map((product) => (
-                <div key={product.id} className="col-md-4 mb-4">
-                  <div className="card h-100 shadow-sm border-0">
-                    <div className="card-body text-center">
-                        {/* replace it with image */}
-                      <div className="bg-light mb-3" style={{height: '150px'}}></div>  
-                      <h5 className="card-title">{product.name}</h5>
-                      <p className="text-muted">{product.category}</p>
-                      <h6 className="fw-bold text-primary">${product.price}</h6>
-                    </div>
-                  </div>
-                </div>
-              ))
-            ) : (
-              <div className="alert alert-warning text-center">
-                No products found.
-              </div>
-            )}
-          </div>
-        </div>
+
 
       </div>
     </div>

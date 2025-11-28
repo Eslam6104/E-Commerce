@@ -1,12 +1,21 @@
 import React from 'react'
 import ServiceCard from './ServicesCard'; 
 import { servicesData } from './ServicesData';
+import HeaderOfSections from '../Components/headerOfSections/headerOfSections';
+
 function Service() {
   return (
+    <>
+    <HeaderOfSections
+        title="Our Services"
+        breadcrumbs={[
+          { label: "Home", href: "/" },
+          { label: "Services" },
+        ]}
+      />
     <div className="py-5 bg-light"> 
       <div className="container">
         <div className="row g-4">
-          
           {servicesData.map((item) => (
             <div key={item.id} className="col-lg-6">
               <ServiceCard 
@@ -16,10 +25,10 @@ function Service() {
               />
             </div>
           ))}
-
         </div>
       </div>
     </div>
+    </>
   )
 }
 

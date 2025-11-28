@@ -47,9 +47,9 @@ export default function Nav() {
             <button className="btn p-0 border-0 bg-transparent">
               <Search size={18} />
             </button>
-            <button className="btn p-0 border-0 bg-transparent">
+            <Link to="/signin" className="btn p-0 border-0 bg-transparent text-dark">
               <User size={18} />
-            </button>
+            </Link>
             <button className="btn p-0 border-0 bg-transparent position-relative">
               <span
                 className="position-absolute top-0 start-100 translate-middle"

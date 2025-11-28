@@ -1,5 +1,6 @@
 import React from "react";
 import HeaderOfSections from '../Components/headerOfSections/headerOfSections';
+import TestimonialsSection from "./TestimonialsSection"
 import { href } from "react-router-dom";
 function About() {
   return (
@@ -56,6 +57,8 @@ function About() {
           </div>
         </div>
       </div>
+      <TestimonialsSection></TestimonialsSection>
+
     </>
   );
 }
