@@ -1,0 +1,45 @@
+/* General Box Styling */
+.testimonial-box {
+    background-color: #0f0f11;
+    padding: 4rem;
+    position: relative;
+    z-index: 2;
+}
+
+/* Title Styling */
+.testimonial-title {
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: #fff;
+}
+
+/* User Avatar Styling */
+.user-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* === Responsive Overlap Logic === */
+
+/* Desktop Screens (Laptops & PC) */
+@media (min-width: 992px) {
+    .testimonial-box {
+        margin: 40px 0px 0px -120px;
+        min-height: 400px;
+    }
+
+    .testimonial-image {
+        min-height: 600px;
+        object-fit: cover;
+    }
+}
+
+/* Mobile & Tablet Screens */
+@media (max-width: 991px) {
+    .testimonial-box {
+        margin: -50px 15px 0px 15px;
+    }
+}
+

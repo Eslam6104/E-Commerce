@@ -8,15 +8,18 @@ import { Provider } from "react-redux";
 import { store } from "./Store/Store.js";
 import { BrowserRouter } from "react-router-dom";
 import { CartProvider } from "react-use-cart";  
+import { AuthProvider } from "./LogReg/AuthContext.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <Provider store={store}>
-      <BrowserRouter>
-        <CartProvider>
-          <App />
-        </CartProvider>
-      </BrowserRouter>
-    </Provider>
+    <AuthProvider>
+        <Provider store={store}>
+          <BrowserRouter>
+            <CartProvider>
+              <App />
+            </CartProvider>
+        </BrowserRouter>
+      </Provider>
+    </AuthProvider>
   </StrictMode>
 );

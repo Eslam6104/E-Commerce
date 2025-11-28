@@ -1,6 +1,7 @@
 import React from "react";
 import AddToCartButton from "../AddToCartButton";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
+import { makeProductSlug } from "../slug";
 
 function getStars(rating) {
   const numericRating = typeof rating === "number" ? rating : rating?.rate ?? 0;
@@ -16,8 +17,8 @@ function Card({ product }) {
   //  Choose image for both card + cart
   const imageSrc = thumbnail || (Array.isArray(images) ? images[0] : undefined);
   //  This is what will be saved in the cart
-  const cartProduct = {   id, title,  price,image: imageSrc, };
-
+  const cartProduct = { id, title, price, image: imageSrc };
+const slug = makeProductSlug(title, id);
   return (
     <div className="card h-100 shadow-sm">
       {/* Image */}
@@ -39,9 +40,12 @@ function Card({ product }) {
       </div>
 
       <div className="card-body d-flex flex-column">
-       <Link to={`/products/${id}`} style={{ textDecoration: 'none', color: 'inherit' }} >
-         <h5 className="card-title mb-1">{title}</h5>
-       </Link>
+        <Link
+         to={`/product/${slug}`}
+  style={{ textDecoration: "none", color: "inherit" }}
+>
+          {product.title}
+        </Link>
         <p className="text-muted mb-1" style={{ fontSize: "0.85rem" }}>
           Category: <strong>{category}</strong>
         </p>

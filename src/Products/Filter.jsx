@@ -63,11 +63,13 @@ const Filter = ({ products }) => {
           </div>
         </div>
 
+
+
+
         {/* PRODUCT LIST HERE */}
         <div className="col-md-9">
           <CardSection data={filteredProducts} />
         </div>
-
       </div>
     </div>
   );

@@ -4,9 +4,10 @@ import { Link, useLocation } from "react-router-dom";
 import Logo from "./Logo";
 import NavLinks from "./NavLinks";
 import CartPreview from "./CartPreview";
-import { Search, User, Menu,ShoppingBag } from "lucide-react";
+import { Menu,ShoppingBag } from "lucide-react";
 import { useCart } from "react-use-cart";
-
+import NavbarSearch from "../NavSearch/NavbarSearch";
+import UserProfile from "./UserProfile";
 export default function Nav() {
   const { pathname } = useLocation();
   const { totalItems } = useCart();
@@ -14,7 +15,7 @@ export default function Nav() {
   return (
     <>
       {/* MAIN NAV */}
-      <header className="border-bottom bg-white fixed-top">
+      <header className="border-bottom bg-white fixed-top py-3">
         <div className="container py-2">
           <div className="d-flex align-items-center justify-content-between">
             {/* Logo */}
@@ -27,19 +28,15 @@ export default function Nav() {
 
             {/* Right side icons */}
             <div className="d-flex align-items-center gap-3">
-              {/* Search icon */}
-              <button className="btn p-0 border-0 bg-transparent d-none d-md-inline">
-                <Search size={20} />
-              </button>
-
-              {/* User icon */}
-              <Link to="/signin" className="text-secondary">
-                <User size={20} />
-              </Link>
+        
+              <NavbarSearch></NavbarSearch>
+              <UserProfile></UserProfile>
 
               {/* Cart dropdown */}
               <div className="d-none d-md-inline">
+                <Link to="/cart">
                 <CartPreview />
+                </Link>
               </div>
 
               {/* Mobile cart badge */}

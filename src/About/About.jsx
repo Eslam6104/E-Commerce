@@ -1,25 +1,30 @@
 import React from "react";
+import HeaderOfSections from '../Components/headerOfSections/headerOfSections';
+import TestimonialsSection from "./TestimonialsSection"
+import { href } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../assets/style/jordans.css";
-import ShoeTtrends from "../About/ShoeTrends";
-import NewsLetter from "../components/newsLetter";
-import HeaderOfSections from './../Components/headerOfSections/headerOfSections';
+import ShoeTtrends from "./ShoeTrends";
+import NewsLetter from "../Components/newsLetter";
 import AboutHero from "./AboutHero";
 import TeamSection from "./OurTeam/TeamSection";
 function About() {
   return (
     <>
+      <div style={{ padding: "50px" }}>
       <HeaderOfSections
-        title="About US"
+        title="About Us"
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "About" },
         ]}
       />
+      </div>
       <AboutHero></AboutHero>
       <TeamSection></TeamSection>
-    <ShoeTtrends></ShoeTtrends>
-    <NewsLetter></NewsLetter>
+      <TestimonialsSection></TestimonialsSection>
+      <ShoeTtrends></ShoeTtrends>
+      <NewsLetter></NewsLetter>
     </>
   );
 }

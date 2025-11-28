@@ -3,7 +3,7 @@ import React from "react";
 import ContactForm from "./ContactForm";
 
 const CONTACT_IMAGE =
-  "https://res.cloudinary.com/dah254u09/image/upload/v1764340198/WhatsApp_Image_2025-11-28_at_3.33.33_PM_vqmrji.jpg";
+  "https://res.cloudinary.com/dah254u09/image/upload/v1764358128/contact-us-image_optimized-600x894_uykkmu.webp";
 
 function ContactSectionForm() {
   return (
