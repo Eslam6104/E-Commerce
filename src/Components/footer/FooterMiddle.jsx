@@ -1,16 +1,12 @@
-/**
- * Middle section of the footer: centered logo row.
- */
-import React from "react";
+import Logo from "../Nav/Logo";
+
 function FooterMiddle() {
   return (
     <div className="border-top">
-      <div className="container py-4 text-center">
-        {/* Replace src with your logo path if needed */}
-        <img src="/logo-dark.svg" alt="Logo" width="170" height="60" />
+      <div className="container py-4 justify-content-center d-flex">
+        <Logo />
       </div>
     </div>
   );
 }
-
 export default FooterMiddle;

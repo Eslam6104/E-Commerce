@@ -1,6 +1,7 @@
-import Nav from "./Components/Nav.jsx";
+import Nav from "./Components/Nav/Nav.jsx";
 import Footer from "./Components/footer/Footer.jsx";
 import { Routes, Route } from "react-router-dom";
+import Cart from "./Cart/Cart.jsx";
 import Home from "./Home/Home.jsx";
 import Products from "./Products/Products.jsx";
 import Service from "./Service/Service.jsx";
@@ -9,7 +10,6 @@ import New from "./News/New.jsx";
 import Signin from "./LogReg/Signin.jsx";
 import Signup from "./LogReg/Signup.jsx";
 import About from "./About/About.jsx";
-import Cart from "./Cart/Cart.jsx";
 import Checkout from "./Checkout/Checkout.jsx"; 
 import "./App.css";
 import { Toaster } from "react-hot-toast";
@@ -17,9 +17,9 @@ import { Toaster } from "react-hot-toast";
 function App() {
   return (
     <>
+    <Nav />
       <Toaster position="top-center" reverseOrder={false} />
 
-      <Nav />
 
       <Routes>
         {/* Home */}
@@ -39,7 +39,10 @@ function App() {
 
         {/* About */}
         <Route path="/about" element={<About />} />
-
+      {/* cart */}
+        <Route path="/cart" element={<Cart />} />
+           {/* Checkout */}
+        <Route path="/checkout" element={<Checkout />} />
         {/* Auth */}
         <Route path="/signin" element={<Signin />} />
         <Route path="/signup" element={<Signup />} />

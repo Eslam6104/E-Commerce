@@ -4,7 +4,6 @@
 import React from "react";
 import FooterTop from "./FooterTop";
 import FooterMiddle from "./FooterMiddle";
-import FooterBottom from "./FooterBottom";
 
 function Footer() {
   return (
@@ -14,7 +13,6 @@ function Footer() {
       {/* Logo row */}
       <FooterMiddle />
       {/* Copyright bar */}
-      <FooterBottom />
     </footer>
   );
 }

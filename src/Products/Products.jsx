@@ -1,9 +1,16 @@
 import React from "react";
+import Filter from "./Filter";
+import { useGetProductsQuery } from "../Store/apislice";
+
 function Products() {
+  const { data: products, isLoading, isError } = useGetProductsQuery();
+
+  if (isLoading) return <h2>Loading...</h2>;
+  if (isError) return <h2>Error loading products</h2>;
+
   return (
-    <div style={{ padding: "2rem" }}>
-      <h1>Products</h1>
-      <p>This is the Products page. You can build your product list here.</p>
+    <div style={{ padding: "20px" }}>
+      <Filter products={products} />
     </div>
   );
 }
