@@ -1,4 +1,4 @@
-import Nav from "./Components/Nav.jsx";
+import Nav from "./Components/Nav/Nav.jsx";
 import Footer from "./Components/footer/Footer.jsx";
 import { Routes, Route } from "react-router-dom";
 import Cart from "./Cart/Cart.jsx";
@@ -17,9 +17,9 @@ import { Toaster } from "react-hot-toast";
 function App() {
   return (
     <>
+    <Nav />
       <Toaster position="top-center" reverseOrder={false} />
 
-      <Nav />
 
       <Routes>
         {/* Home */}

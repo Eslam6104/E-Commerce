@@ -5,6 +5,7 @@ import ShoeTtrends from "../About/ShoeTrends";
 import NewsLetter from "../components/newsLetter";
 import HeaderOfSections from './../Components/headerOfSections/headerOfSections';
 import AboutHero from "./AboutHero";
+import TeamSection from "./OurTeam/TeamSection";
 function About() {
   return (
     <>
@@ -16,6 +17,7 @@ function About() {
         ]}
       />
       <AboutHero></AboutHero>
+      <TeamSection></TeamSection>
     <ShoeTtrends></ShoeTtrends>
     <NewsLetter></NewsLetter>
     </>
