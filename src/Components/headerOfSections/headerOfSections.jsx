@@ -6,11 +6,11 @@ const HeaderOfSections = ({ title, breadcrumbs = [] }) => {
       className="bg-light text-center w-100"
       style={{ paddingTop: "50px", paddingBottom: "150px" }}
     >
-      <div className="container">
+      <div className="container ">
         
         {/* Breadcrumbs Logic */}
         <nav aria-label="breadcrumb">
-          <ol className="breadcrumb justify-content-center mb-2">
+          <ol className="breadcrumb justify-content-center mb-2 pt-5">
             {breadcrumbs.map((item, index) => (
               <li
                 key={index}

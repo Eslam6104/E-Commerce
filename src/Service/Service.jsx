@@ -1,14 +1,25 @@
 import React, { useRef } from "react";
 import "../assets/style/mission2.css";
-import missionImg from "../assets/images/mission2.webp";
-import { setupAccordion } from "../components/accordionController";
-import Mission2 from "./mission2"
-
+import Mission1 from "./Mession1/Mission1";
+import Mission2 from "./Mission2"
+import HeaderOfSections from './../Components/headerOfSections/headerOfSections';
+import ServiceBrands from "./ServiceBrand";
+import TeamSection from "./OurTeam/TeamSection";
 function Service() {
 
 
   return (
     <>
+       <HeaderOfSections
+        title="Service"
+        breadcrumbs={[
+          { label: "Home", href: "/" },
+          { label: "Service" },
+        ]}
+      />
+      <ServiceBrands></ServiceBrands>
+      <TeamSection></TeamSection>
+      <Mission1></Mission1>
     <Mission2></Mission2>
     
     </>

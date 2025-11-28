@@ -1,45 +1,49 @@
 import { useState, useEffect } from "react";
 
-const useFilter = (products) => {
-  const [filteredProducts, setFilteredProducts] = useState(products);
+export default function useFilter(products = []) {
+  const [filteredProducts, setFilteredProducts] = useState([]);
+  const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("All");
-  const [priceRange, setPriceRange] = useState([0, 300]); // [min, max]
+  const [priceRange, setPriceRange] = useState([0, 0]);
+  const [maxPrice, setMaxPrice] = useState(0);
 
   useEffect(() => {
-    applyFilters();
-  }, [selectedCategory, priceRange, products]);
+    if (!products.length) return;
 
-  const applyFilters = () => {
-    let updatedList = products;
-    // catogary filter
+    // Set max price
+    const highest = Math.max(...products.map((p) => p.price));
+    setMaxPrice(highest);
+    setPriceRange([0, highest]);
+
+    // Set categories
+    const uniqueCats = [...new Set(products.map((p) => p.category))];
+    setCategories(uniqueCats);
+
+    setFilteredProducts(products);
+  }, [products]);
+
+  // APPLY FILTER
+  useEffect(() => {
+    let list = [...products];
+
     if (selectedCategory !== "All") {
-      updatedList = updatedList.filter(
-        (item) => item.category === selectedCategory
-      );
+      list = list.filter((p) => p.category === selectedCategory);
     }
 
-    // price filter
-    updatedList = updatedList.filter(
-      (item) => item.price >= priceRange[0] && item.price <= priceRange[1]
+    list = list.filter(
+      (p) => p.price >= priceRange[0] && p.price <= priceRange[1]
     );
 
-    setFilteredProducts(updatedList);
-  };
+    setFilteredProducts(list);
+  }, [products, selectedCategory, priceRange]);
 
-  const handleCategoryChange = (e) => {
-    setSelectedCategory(e.target.value);
-  };
-
-  const handleSliderChange = (value) => {
-    setPriceRange(value);
-  };
   return {
     filteredProducts,
+    categories,
     selectedCategory,
+    setSelectedCategory,
     priceRange,
-    handleCategoryChange,
-    handleSliderChange,
+    setPriceRange,
+    maxPrice
   };
-};
-
-export default useFilter;
+}

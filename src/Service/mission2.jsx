@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../assets/style/mission2.css";
 import missionImg from "../assets/images/mission2.webp";
 
-const Mission = () => {
+const Mission2 = () => {
   const description =
     "Description for this block. Use this space for describing your block. Any text will do. Description for this block. You can use this space for describing your block.";
 
@@ -75,4 +75,4 @@ const Mission = () => {
   );
 };
 
-export default Mission;
+export default Mission2;
