@@ -5,15 +5,17 @@ import { useAuth } from "../../LogReg/AuthContext";
 
 const UserProfile = () => {
   const { user, logout } = useAuth();
-
-  // logged in user
+   const getDisplayName = (fullName) => {
+    if (!fullName) return "User";
+    return fullName.split(' ').slice(0, 2).join(' ');
+  };
   if (user) {
     return (
       <div className="d-flex align-items-center gap-2 border-end pe-3">
         <div className="d-flex flex-column align-items-end" style={{ lineHeight: '1.2' }}>
           <span className="small text-muted" style={{ fontSize: '10px' }}>Welcome</span>
           <span className="fw-bold text-dark" style={{ fontSize: '14px' }}>
-            {user.name}
+            {getDisplayName(user.name)}
           </span>
         </div>
         <button

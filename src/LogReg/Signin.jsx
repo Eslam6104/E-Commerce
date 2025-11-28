@@ -7,7 +7,7 @@ function Signin() {
   // Initialize hook for Login mode
   const { register, handleSubmit, errors, onSubmit } = useAuthForm('signin');
   return (
-    <div className="container d-flex justify-content-center align-items-center " style={{ minHeight: "80vh",marginTop:"80px" }}>
+    <div className="container d-flex justify-content-center align-items-center" style={{ minHeight: "80vh" ,marginTop:"80px"}}>
       <Toaster position="top-center" />
 
       <div className="card border-0 shadow-lg p-4" style={{ maxWidth: "450px", width: "100%" }}>

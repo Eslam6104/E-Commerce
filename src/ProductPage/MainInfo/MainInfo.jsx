@@ -1,5 +1,5 @@
 import React from "react";
-
+import AddToCartButton from "../../Components/AddToCartButton";
 function MainInfo({ product, onAddToCart }) {
   if (!product) return null;
 
@@ -60,25 +60,8 @@ function MainInfo({ product, onAddToCart }) {
 
           {/* الكمية + زرار الكارت (simple UI، تقدر تربطه بالـ cart عندك) */}
           <div className="d-flex flex-wrap align-items-center gap-3">
-            {/* مكان الكمية لو حابب تزوده بعدين */}
-            {/* <div className="input-group" style={{ maxWidth: "140px" }}>
-              <button className="btn btn-outline-secondary">-</button>
-              <input
-                type="text"
-                className="form-control text-center"
-                value={1}
-                readOnly
-              />
-              <button className="btn btn-outline-secondary">+</button>
-            </div> */}
 
-            <button
-              className="btn btn-dark px-4"
-              onClick={onAddToCart}
-              disabled={product.stock <= 0}
-            >
-              Add to cart
-            </button>
+          <AddToCartButton product={product} />
           </div>
 
           {/* الكاتيجوري */}
