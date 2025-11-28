@@ -2,6 +2,8 @@ import React from "react";
 import Hero from "./hero.jsx"
 import Categories from "./categories.jsx"
 import Sales from "./sales.jsx"
+import NewsSection from '../Components/News/NewsSection';
+import { blogPosts } from '../Components/News/NewsData';
 import { useGetProductsQuery } from "../Store/apislice.js";
 import CardSecBlok from '../Components/CardSecBlock/CardSECBlok.jsx';
 function Home() {
@@ -18,7 +20,6 @@ const popularProducts = products
   : [];  return (
     <>
       <Hero></Hero>
-
           <CardSecBlok
       title="New Arrivals"
       subtitle="Check out latest products"
@@ -35,7 +36,11 @@ const popularProducts = products
       viewAllLink="/products"
     />
       <Sales></Sales>
-
+      <div className='container d-flex flex-column align-items-center mt-5'>
+        <span className='text-secondary fs-6 mb-3'>Check out popular products</span>
+        <h2 className='fs-1 fw-bold'>Popular Products</h2>
+      </div>
+      <NewsSection newsData={blogPosts} limit={3} />
     </>
   );
 }

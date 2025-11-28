@@ -1,28 +1,48 @@
+import ServiceCard from './ServicesCard'; 
+import { servicesData } from './ServicesData';
+import HeaderOfSections from '../Components/headerOfSections/headerOfSections';
 import React, { useRef } from "react";
 import "../assets/style/mission2.css";
 import Mission1 from "./Mession1/Mission1";
-import Mission2 from "./Mission2"
-import HeaderOfSections from './../Components/headerOfSections/headerOfSections';
+import Mission2 from "./Mission2";
 import ServiceBrands from "./ServiceBrand";
+import TeamSection from "../About/OurTeam/TeamSection";
+
 function Service() {
 
 
   return (
     <>
-       <HeaderOfSections
-        title="Service"
+    <div style={{ padding: "50px" }}>
+      <HeaderOfSections
+        title="Services"
         breadcrumbs={[
           { label: "Home", href: "/" },
-          { label: "Service" },
+          { label: "Services" },
         ]}
       />
+      </div>
+    <div className="py-5 bg-light"> 
+      <div className="container">
+        <div className="row g-4">
+          {servicesData.map((item) => (
+            <div key={item.id} className="col-lg-6">
+              <ServiceCard 
+                icon={item.icon}
+                title={item.title}
+                description={item.description}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+      )
       <ServiceBrands></ServiceBrands>
       <Mission1></Mission1>
     <Mission2></Mission2>
-    
     </>
-    
-  );
+  )
 }
 
 export default Service;

@@ -21,13 +21,15 @@ function Contact() {
   return (
     <div>
         <Toaster position="top-center" />
-       <HeaderOfSections
-        title="Contact"
+       <div style={{ padding: "50px" }}>
+      <HeaderOfSections
+        title="Contact Us"
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Contact" },
         ]}
       />
+      </div>
       <ContactSectionForm />
             <CardSecBlok
       title="New Arrivals"

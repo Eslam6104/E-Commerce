@@ -4,13 +4,13 @@ import HeaderOfSections from '../../Components/headerOfSections/headerOfSections
 const NewsSection = ({ newsData, limit }) => {
   return (
     <>
-           <HeaderOfSections
+           {/* <HeaderOfSections
         title="News"
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "News" },
         ]}
-      />
+      /> */}
     <div className="container py-5">
    
       <div className="row">
