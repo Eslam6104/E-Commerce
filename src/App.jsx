@@ -13,6 +13,7 @@ import About from "./About/About.jsx";
 import Checkout from "./Checkout/Checkout.jsx"; 
 import "./App.css";
 import { Toaster } from "react-hot-toast";
+import SearchResults from "./Components/NavSearch/SearchResults.jsx";
 
 function App() {
   return (
@@ -51,6 +52,8 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />
 
+        {/* Search */}
+        <Route path="/search" element={<SearchResults />} />
         {/* 404 */}
         <Route
           path="*"

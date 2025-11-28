@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Search, User, ShoppingBag, Menu, Trash2 } from "lucide-react";
+import NavbarSearch from "./NavSearch/NavbarSearch";
 import { useCart } from "react-use-cart";
 
 const links = [
@@ -55,10 +56,10 @@ export default function Nav() {
 
           {/* DESKTOP ICONS */}
           <div className="d-none d-lg-flex align-items-center gap-3">
-            <button className="btn p-0 border-0 bg-transparent">
+            {/* <button className="btn p-0 border-0 bg-transparent">
               <Search size={18} />
-            </button>
-
+            </button> */}
+            <NavbarSearch></NavbarSearch>
             <Link to="/signin" className="btn p-0 border-0 bg-transparent text-dark">
               <User size={18} />
             </Link>
