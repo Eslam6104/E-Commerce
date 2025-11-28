@@ -1,25 +1,25 @@
-import jacketsImg from "../assets/images/jacket.webp";
-import sweatersImg from "../assets/images/sweaters.webp";
-import accessoriesImg from "../assets/images/accessories.webp";
+import groceriesImg from "../assets/images/grocieries.jpg";
+import fragnacesImg from "../assets/images/fragnance.jpg";
+import furnitureImg from "../assets/images/furniture.jpg";
 
 const categories = [
   {
     id: 1,
-    title: "Jackets",
+    title: "Groceries",
     articles: 461,
-    image: jacketsImg,
+    image: groceriesImg,
   },
   {
     id: 2,
-    title: "Sweaters",
+    title: "Fragnance",
     articles: 289,
-    image: sweatersImg,
+    image: fragnacesImg,
   },
   {
     id: 3,
-    title: "Accessories",
+    title: "Furniture",
     articles: 345,
-    image: accessoriesImg,
+    image: furnitureImg,
   },
 ];
 
